@@ -1,1 +1,1 @@
-This repo is for NYU HPML
+This repo is for Lab work (in progress)
