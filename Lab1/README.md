@@ -1,2 +1,2 @@
-# NYU-HPML
-Repo for NYU's High-Performance Machine Learning course
+# NYU-HighPerfML
+Repo for lab work
