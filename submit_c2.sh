@@ -1,21 +1,22 @@
 #!/bin/bash
-#SBATCH --job-name=ap7982_c5
+#SBATCH --job-name=c2
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=00:30:00
-#SBATCH --mem=3GB
+#SBATCH --time=00:10:00
+#SBATCH --mem=1GB
 #SBATCH --output=%x.out
-#SBATCH --mail-type=END
-#SBATCH --mail-user=ap7982@nyu.edu
 
 module purge
 module load anaconda3/2020.07
 eval "$(conda shell.bash hook)"
 conda activate idle
-cd /scratch/ap7982/lab1
+cd /scratch/username/lab1
+
+# Compile the C program
+gcc -O3 -Wall -o c2 c2.c
 
 # Run the program with N=1000000 and R=1000
-python c5.py 1000000 1000
+./c2 1000000 1000
 
 # Run the program with N=300000000 and R=20
-python c5.py 300000000 20
+./c2 300000000 20

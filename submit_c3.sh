@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=ap7982_c3
+#SBATCH --job-name=c3
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
 #SBATCH --time=00:10:00
@@ -11,7 +11,7 @@ module load anaconda3/2020.07
 module load python/intel/3.8.6
 eval "$(conda shell.bash hook)"
 conda activate idle
-cd /scratch/ap7982/lab1
+cd /scratch/username/lab1
 
 # Compile the C program with MKL
 gcc -O3 -Wall -o c3 c3.c -DMKL_ILP64  -m64  -I"${MKLROOT}/include" -L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl
