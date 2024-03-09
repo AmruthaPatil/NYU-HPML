@@ -15,20 +15,20 @@ Microbenchmarking is the process of measuring the performance of small units of 
 - Compute mean execution time and bandwidth.
 - Compile with gcc and execute on a suitable node.
 
-### C2: Computing Dot Product with Unrolling
+### Computing Dot Product with Unrolling
 
 - Perform the same microbenchmark with unrolling to potentially improve performance.
 
-### C3: Computing Dot Product with MKL
+### Computing Dot Product with MKL
 
 - Use MKL (Intel Math Kernel Library) to compute the dot product and compare performance with the C implementation.
 
-### C4: Computing Dot Product in Python
+### Computing Dot Product in Python
 
 - Implement the microbenchmark in Python using numpy arrays.
 - Compare performance with the C implementations.
 
-### C5: Computing Dot Product with numpy.dot
+### Computing Dot Product with numpy.dot
 
 - Use numpy's built-in dot product function and compare performance with the other implementations.
 
@@ -44,10 +44,10 @@ To run the project, use the provided shell submit file.
 - Dot product using NumPy's dot function in Python, showing a substantial improvement to 6.104 GFLOP/sec and 2539.353 GB/sec for N = 1000000.
 
 ## Observations
-- The C implementations (C1, C2, C3) generally outperform the Python implementations (C4, C5) in terms of throughput and bandwidth, especially for larger values of N.
-- Loop unrolling (C2) and using Intel MKL (C3) significantly improve the performance of the dot product computation in C.
-- The performance of the basic Python implementation (C4) is much lower compared to C, highlighting the interpreted nature of Python and its inefficiency in numerical operations.
-- Utilizing NumPy's dot function (C5) greatly enhances performance in Python, achieving throughput and bandwidth closer to C implementations.
+- The C implementations generally outperform the Python implementations in terms of throughput and bandwidth, especially for larger values of N.
+- Loop unrolling and using Intel MKL significantly improve the performance of the dot product computation in C.
+- The performance of the basic Python implementation is much lower compared to C, highlighting the interpreted nature of Python and its inefficiency in numerical operations.
+- Utilizing NumPy's dot function greatly enhances performance in Python, achieving throughput and bandwidth closer to C implementations.
 
 ## Inferences
 - The choice of programming language and optimization techniques can have a significant impact on the performance of numerical computations.
